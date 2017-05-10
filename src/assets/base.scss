@@ -1,0 +1,54 @@
+@import './font';
+/* variable start*/
+$base-color:#333333;
+$border-color:#e5e5e5;
+$vice-color:#999999;
+$red-color:#ec1500;
+/* variable end */
+html{
+  font-size: 62.5%;
+}
+body{
+  font-size: 1.4rem;
+  color: $base-color;
+  background: #f5f5f5;
+}
+
+/*reset style start*/
+h1,h2,h3,h4,h5,h6,p,ul{
+  margin: 0;
+  padding: 0;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: 200;
+}
+a{
+  color: $base-color;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*reset style end*/
+
+/*public class start*/
+.content{
+  padding:6rem 0 5rem
+}
+.clear-fix{
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+/*public class end*/
+
+
+/*mixin start*/
+//多列换行显示省略号
+@mixin word-overflow ($clamp:2){
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $clamp;
+  overflow: hidden;
+}
+/*mixin end*/

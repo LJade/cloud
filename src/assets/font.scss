@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'fonts';
+  src:  url('/static/fonts/fonts.eot?4ebpf0');
+  src:  url('/static/fonts/fonts.eot?4ebpf0#iefix') format('embedded-opentype'),
+  url('/static/fonts/fonts.ttf?4ebpf0') format('truetype'),
+  url('/static/fonts/fonts.woff?4ebpf0') format('woff'),
+  url('/static/fonts/fonts.svg?4ebpf0#fonts') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'fonts' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-find:before {
+  content: "\e900";
+}
+.icon-route:before {
+  content: "\e901";
+}
+.icon-project:before {
+  content: "\e902";
+}
+.icon-mark:before {
+  content: "\e903";
+}
+.icon-question:before {
+  content: "\e904";
+}
+.icon-app:before {
+  content: "\e905";
+}
+.icon-cart:before {
+  content: "\e906";
+}
+.icon-download:before {
+  content: "\e907";
+}
+.icon-envelope:before {
+  content: "\e908";
+}
+.icon-home:before {
+  content: "\e909";
+}
+.icon-search:before {
+  content: "\e90a";
+}
+.icon-user:before {
+  content: "\e90b";
+}
+
