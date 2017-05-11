@@ -1,6 +1,5 @@
 <template>
-  <div class="course_box">
-    <div class="course-box">
+  <div class="course-box">
       <div class="course-name">
         <span v-for="item in courseInfo.name">
           {{ item }}
@@ -15,7 +14,6 @@
       <div class="course-note">
         {{courseInfo.note}}
       </div>
-    </div>
   </div>
 </template>
 
@@ -35,14 +33,21 @@
 <style scoped lang="scss">
   @import "../assets/base";
   .course-box {
-    width: 15.5rem;
+    width: 13.5rem;
     height: 14rem;
     background: #ffffff;
     overflow: hidden;
     border-radius: 5px;
     box-sizing: border-box;
+    box-shadow: 0 0 1px 2px $border-color;
     font-size: 1rem;
     line-height: 1.5em;
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    &:nth-child(even){
+      margin-right: 0;
+    }
     .course-name{
       height: 3em;
       line-height: 3em;

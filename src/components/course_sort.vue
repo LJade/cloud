@@ -5,7 +5,9 @@
         <i class="icon" :class="sortInfo.iconClass"></i>
         {{sortInfo.content}}
       </h4>
-      <span class="sort-link" v-if="sortInfo.handle" @click="clickHandle">换一换</span>
+      <span class="sort-link" v-if="sortInfo.handle" @click="clickHandle">
+        <i class="icon-refresh"></i>
+        换一换</span>
     </nav>
   </div>
 </template>

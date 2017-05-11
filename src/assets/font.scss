@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'fonts';
-  src:  url('/static/fonts/fonts.eot?4ebpf0');
-  src:  url('/static/fonts/fonts.eot?4ebpf0#iefix') format('embedded-opentype'),
-  url('/static/fonts/fonts.ttf?4ebpf0') format('truetype'),
-  url('/static/fonts/fonts.woff?4ebpf0') format('woff'),
-  url('/static/fonts/fonts.svg?4ebpf0#fonts') format('svg');
+  src:  url('/static/fonts/fonts.eot?dgwavl');
+  src:  url('/static/fonts/fonts.eot?dgwavl#iefix') format('embedded-opentype'),
+  url('/static/fonts/fonts.ttf?dgwavl') format('truetype'),
+  url('/static/fonts/fonts.woff?dgwavl') format('woff'),
+  url('/static/fonts/fonts.svg?dgwavl#fonts') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,171 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-like:before {
+  content: "\e90c";
+}
+.icon-android:before {
+  content: "\e90d";
+}
+.icon-big-data:before {
+  content: "\e90e";
+}
+.icon-code:before {
+  content: "\e90f";
+}
+.icon-order:before {
+  content: "\e910";
+}
+.icon-tool:before {
+  content: "\e911";
+}
+.icon-pen:before {
+  content: "\e912";
+}
+.icon-animate:before {
+  content: "\e913";
+}
+.icon-coursetable:before {
+  content: "\e914";
+}
+.icon-course:before {
+  content: "\e915";
+}
+.icon-history:before {
+  content: "\e916";
+}
+.icon-color:before {
+  content: "\e917";
+}
+.icon-setting:before {
+  content: "\e918";
+}
+.icon-more:before {
+  content: "\e919";
+}
+.icon-test:before {
+  content: "\e91a";
+}
+.icon-recommand:before {
+  content: "\e91b";
+}
+.icon-good:before {
+  content: "\e91c";
+}
+.icon-collect:before {
+  content: "\e91d";
+}
+.icon-night:before {
+  content: "\e91e";
+}
+.icon-finished:before {
+  content: "\e91f";
+}
+.icon-coupon:before {
+  content: "\e920";
+}
+.icon-cloud:before {
+  content: "\e921";
+}
+.icon-hot:before {
+  content: "\e922";
+}
+.icon-angular:before {
+  content: "\e923";
+}
+.icon-webapp:before {
+  content: "\e924";
+}
+.icon-bootstrap:before {
+  content: "\e925";
+}
+.icon-C:before {
+  content: "\e926";
+}
+.icon-Cplus:before {
+  content: "\e927";
+}
+.icon-Cocos2d:before {
+  content: "\e928";
+}
+.icon-CSS3:before {
+  content: "\e929";
+}
+.icon-go:before {
+  content: "\e92a";
+}
+.icon-html5:before {
+  content: "\e92b";
+}
+.icon-iOS:before {
+  content: "\e92c";
+}
+.icon-java:before {
+  content: "\e92d";
+}
+.icon-jquery:before {
+  content: "\e92e";
+}
+.icon-less:before {
+  content: "\e92f";
+}
+.icon-linux:before {
+  content: "\e930";
+}
+.icon-sqlserver:before {
+  content: "\e931";
+}
+.icon-mongodb:before {
+  content: "\e932";
+}
+.icon-right:before {
+  content: "\e933";
+}
+.icon-mysql:before {
+  content: "\e934";
+}
+.icon-nodejs:before {
+  content: "\e935";
+}
+.icon-oracle:before {
+  content: "\e936";
+}
+.icon-php:before {
+  content: "\e937";
+}
+.icon-python:before {
+  content: "\e938";
+}
+.icon-react:before {
+  content: "\e939";
+}
+.icon-refresh:before {
+  content: "\e93a";
+}
+.icon-ruby:before {
+  content: "\e93b";
+}
+.icon-sass:before {
+  content: "\e93c";
+}
+.icon-ui:before {
+  content: "\e93d";
+}
+.icon-unity3d:before {
+  content: "\e93e";
+}
+.icon-vuecolor .path1:before {
+  content: "\e93f";
+  color: rgb(53, 73, 94);
+}
+.icon-vuecolor .path2:before {
+  content: "\e940";
+  margin-left: -1em;
+  color: rgb(65, 184, 131);
+}
+.icon-vue:before {
+  content: "\e941";
+}
 .icon-find:before {
   content: "\e900";
 }

@@ -45,7 +45,12 @@
         </router-link>
       </div>
       <course-sort :sortInfo="sortInfo"></course-sort>
-      <course-info :courseInfo="courseInfo"></course-info>
+      <div class="course-list clear-fix">
+        <course-info :courseInfo="courseInfo"></course-info>
+        <course-info :courseInfo="courseInfo"></course-info>
+        <course-info :courseInfo="courseInfo"></course-info>
+        <course-info :courseInfo="courseInfo"></course-info>
+      </div>
     </div>
   </div>
 </template>
@@ -67,7 +72,7 @@
       return {
         headerTitle: '首页',
         sortInfo: {
-          iconClass: 'icon-home',
+          iconClass: 'icon-recommand',
           content: '课程推荐',
           handle: true
         },
@@ -147,5 +152,10 @@
         }
       }
     }
+  }
+
+  .course-list{
+    padding: 1rem;
+
   }
 </style>
