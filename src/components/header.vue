@@ -14,6 +14,7 @@
         </router-link>
       </div>
     </header>
+    <div class="mask"></div>
   </div>
 </template>
 
@@ -37,7 +38,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
     z-index: 100;
     display: flex;
@@ -61,16 +62,15 @@
         }
       }
     }
-    &:before {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background: rgb(53, 56, 73);
-      z-index: -1;
-    }
+
+  }
+  .mask{
+    display: block;
+    width: 100%;
+    height: 6rem;
+    background: rgb(53, 56, 73);
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 </style>
