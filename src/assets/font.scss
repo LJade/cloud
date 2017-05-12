@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'fonts';
-  src:  url('/static/fonts/fonts.eot?dgwavl');
-  src:  url('/static/fonts/fonts.eot?dgwavl#iefix') format('embedded-opentype'),
-  url('/static/fonts/fonts.ttf?dgwavl') format('truetype'),
-  url('/static/fonts/fonts.woff?dgwavl') format('woff'),
-  url('/static/fonts/fonts.svg?dgwavl#fonts') format('svg');
+  src:  url('/static/fonts/fonts.eot?jua6m1');
+  src:  url('/static/fonts/fonts.eot?jua6m1#iefix') format('embedded-opentype'),
+  url('/static/fonts/fonts.ttf?jua6m1') format('truetype'),
+  url('/static/fonts/fonts.woff?jua6m1') format('woff'),
+  url('/static/fonts/fonts.svg?jua6m1#fonts') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,42 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-delete:before {
+  content: "\e942";
+}
+.icon-achieve:before {
+  content: "\e943";
+}
+.icon-edit:before {
+  content: "\e944";
+}
+.icon-eye-close:before {
+  content: "\e945";
+}
+.icon-eye:before {
+  content: "\e946";
+}
+.icon-js:before {
+  content: "\e947";
+}
+.icon-csharp:before {
+  content: "\e948";
+}
+.icon-QQ:before {
+  content: "\e949";
+}
+.icon-share:before {
+  content: "\e94a";
+}
+.icon-stars:before {
+  content: "\e94b";
+}
+.icon-weibo:before {
+  content: "\e94c";
+}
+.icon-weixin:before {
+  content: "\e94d";
+}
 .icon-like:before {
   content: "\e90c";
 }
@@ -105,7 +141,7 @@
 .icon-C:before {
   content: "\e926";
 }
-.icon-Cplus:before {
+.icon-C++:before {
   content: "\e927";
 }
 .icon-Cocos2d:before {
@@ -224,5 +260,41 @@
 }
 .icon-user:before {
   content: "\e90b";
+}
+.icon-download2:before {
+  content: "\e9c5";
+}
+.icon-plus:before {
+  content: "\ea0a";
+}
+.icon-minus:before {
+  content: "\ea0b";
+}
+.icon-cross:before {
+  content: "\ea0f";
+}
+.icon-checkmark:before {
+  content: "\ea10";
+}
+.icon-play3:before {
+  content: "\ea1c";
+}
+.icon-pause2:before {
+  content: "\ea1d";
+}
+.icon-stop2:before {
+  content: "\ea1e";
+}
+.icon-arrow-up2:before {
+  content: "\ea3a";
+}
+.icon-arrow-right2:before {
+  content: "\ea3c";
+}
+.icon-arrow-down2:before {
+  content: "\ea3e";
+}
+.icon-arrow-left2:before {
+  content: "\ea40";
 }
 
