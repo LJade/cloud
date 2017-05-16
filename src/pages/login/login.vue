@@ -10,9 +10,10 @@
           </div>
         </div>
         <div class="form-group">
-          <input type="text" v-model="form.password" placeholder="密码">
+          <!--<input type="text" v-model="form.password" placeholder="密码" v-if="isSeen">-->
+          <input type="password" v-model="form.password" placeholder="密码" ref="psd">
           <div class="icon-wrapper">
-            <i class="icon icon-eye-close" :class="[isSeen ? 'icon-eye-close' : 'icon-eye']"
+            <i class="icon icon-eye-close" :class="[isSeen ? 'icon-eye' : 'icon-eye-close']"
                @click="passwordDisplay"></i>
           </div>
         </div>
@@ -32,6 +33,7 @@
 </template>
 
 <script>
+  import { MessageBox } from 'mint-ui'
   export default {
     name: 'login',
     data () {
@@ -45,17 +47,22 @@
     },
     methods: {
       loginSubmit () {
-        console.log(this.form)
-        this.$axios.post('http://127.0.0.1:1234/api/login', this.form)
-          .then(function (response) {
-            console.log(response)
+        this.$axios.post('/api/login', this.form)
+          .then((response) => {
+            let res = response.data
+            if (res.status === 200) {
+              this.$router.push({ path: 'home' })
+            } else {
+              MessageBox('提示', '用户名或密码错误')
+            }
           })
-          .catch(function (error) {
-            console.log(error)
+          .catch(() => {
+            MessageBox('提示', '连接错误')
           })
       },
       passwordDisplay: function () {
         this.isSeen = !this.isSeen
+        this.$refs.psd.type = this.isSeen ? 'text' : 'password'
       }
     }
   }

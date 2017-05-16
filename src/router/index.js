@@ -9,6 +9,7 @@ import home from '../pages/home/home.vue'
 
 // 课程相关
 import course from '../pages/course/course.vue'
+import courseTab from '../pages/course/coursetab.vue'
 
 // 下载相关
 import download from '../pages/download/download.vue'
@@ -50,6 +51,11 @@ export default new Router({
       path: '/user',
       name: 'user',
       component: user
+    },
+    {
+      path: '/coursetab',
+      name: 'coursetab',
+      component: courseTab
     }
   ]
 })
