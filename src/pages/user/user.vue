@@ -110,7 +110,7 @@
             <i class="icon icon-night"></i>
             夜间模式
           </div>
-            <mt-switch v-model="nightModel"></mt-switch>
+            <mt-switch @click.native="nightSwitch" v-model="nightModel"></mt-switch>
         </router-link>
         <a href="javascript:void(0)">
           <div class="link-left">
@@ -140,6 +140,11 @@
       return {
         headerTitle: '我的',
         nightModel: false
+      }
+    },
+    methods: {
+      nightSwitch: function () {
+        this.nightModel = !this.nightModel
       }
     }
   }
@@ -286,6 +291,11 @@
       .link-left{
         i{
           margin-right: 1rem;
+        }
+      }
+      .link-arrow{
+        i{
+          font-size: 1.6rem;
         }
       }
     }
