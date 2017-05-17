@@ -12,6 +12,7 @@
           <mt-swipe-item><img src="../../assets/images/index_banner5.jpg" alt=""></mt-swipe-item>
         </mt-swipe>
       </div>
+      <div>{{isLogin}}</div>
       <div class="nav-menu">
         <router-link to="">
           <div class="icon-wrapper">
@@ -60,6 +61,8 @@
   import commonFooter from '../../components/footer.vue'
   import courseSort from '../../components/course_sort.vue'
   import courseInfo from '../../components/course_box.vue'
+  import { home } from '../../api/index'
+  import { mapGetters } from 'vuex'
   export default {
     name: 'home',
     components: {
@@ -83,6 +86,14 @@
           note: '1125人学习'
         }
       }
+    },
+    mounted () {
+      home.getRecommendCourse().then(res => {
+        console.log(res)
+      })
+    },
+    computed: {
+      ...mapGetters(['isLogin'])
     }
   }
 </script>

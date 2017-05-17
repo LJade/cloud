@@ -4,14 +4,14 @@
       <h2>欢迎登录慕课网</h2>
       <div class="form-wrapper">
         <div class="form-group">
-          <input type="text" v-model="form.username" placeholder="手机号/邮箱">
+          <input type="text" v-model="username" placeholder="手机号/邮箱">
           <div class="icon-wrapper">
             <i class="icon icon-more"></i>
           </div>
         </div>
         <div class="form-group">
           <!--<input type="text" v-model="form.password" placeholder="密码" v-if="isSeen">-->
-          <input type="password" v-model="form.password" placeholder="密码" ref="psd">
+          <input type="password" v-model="password" placeholder="密码" ref="psd">
           <div class="icon-wrapper">
             <i class="icon icon-eye-close" :class="[isSeen ? 'icon-eye' : 'icon-eye-close']"
                @click="passwordDisplay"></i>
@@ -33,32 +33,30 @@
 </template>
 
 <script>
-  import { MessageBox } from 'mint-ui'
+  import {MessageBox} from 'mint-ui'
+  import {mapActions} from 'vuex'
   export default {
     name: 'login',
     data () {
       return {
-        form: {
-          username: '',
-          password: ''
-        },
+        username: '',
+        password: '',
         isSeen: false
       }
     },
     methods: {
+      ...mapActions(['login']),
       loginSubmit () {
-        this.$axios.post('/api/login', this.form)
-          .then((response) => {
-            let res = response.data
-            if (res.status === 200) {
-              this.$router.push({ path: 'home' })
-            } else {
-              MessageBox('提示', '用户名或密码错误')
-            }
-          })
-          .catch(() => {
-            MessageBox('提示', '连接错误')
-          })
+        const { username, password } = this
+        this.login({username, password}).then(res => {
+          if (res.data && res.status === 200) {
+            this.$router.push({path: 'home'})
+          } else {
+            MessageBox('提示', '用户名或密码错误')
+          }
+        }).catch((e) => {
+          MessageBox('提示', '连接错误')
+        })
       },
       passwordDisplay: function () {
         this.isSeen = !this.isSeen
