@@ -10,12 +10,16 @@ import home from '../pages/home/home.vue'
 // 课程相关
 import course from '../pages/course/course.vue'
 import courseIntro from '../pages/course/course_intro.vue'
+import courseDetail from '../pages/course/detail.vue'
 
 // 下载相关
 import download from '../pages/download/download.vue'
 
 // 个人中心
 import user from '../pages/user/user.vue'
+
+// 购物车相关
+import cart from '../pages/cart/cart.vue'
 
 Vue.use(Router)
 
@@ -56,6 +60,16 @@ export default new Router({
       path: '/course_intro',
       name: 'courseIntro',
       component: courseIntro
+    },
+    {
+      path: '/course_detail',
+      name: 'courseDetail',
+      component: courseDetail
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: cart
     }
   ]
 })

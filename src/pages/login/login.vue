@@ -48,15 +48,19 @@
       ...mapActions(['login']),
       loginSubmit () {
         const { username, password } = this
-        this.login({username, password}).then(res => {
-          if (res.data && res.status === 200) {
-            this.$router.push({path: 'home'})
-          } else {
-            MessageBox('提示', '用户名或密码错误')
-          }
-        }).catch((e) => {
-          MessageBox('提示', '连接错误')
-        })
+        if (username && password) {
+          this.login({username, password}).then(res => {
+            if (res.data && res.status === 200) {
+              this.$router.push({path: 'home'})
+            } else {
+              MessageBox('提示', '用户名或密码错误')
+            }
+          }).catch((e) => {
+            MessageBox('提示', '连接错误')
+          })
+        } else {
+          MessageBox('提示', '请完善表单内容')
+        }
       },
       passwordDisplay: function () {
         this.isSeen = !this.isSeen

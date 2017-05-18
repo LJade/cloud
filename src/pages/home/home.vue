@@ -12,7 +12,6 @@
           <mt-swipe-item><img src="../../assets/images/index_banner5.jpg" alt=""></mt-swipe-item>
         </mt-swipe>
       </div>
-      <div>{{isLogin}}</div>
       <div class="nav-menu">
         <router-link to="">
           <div class="icon-wrapper">
