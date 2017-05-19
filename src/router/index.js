@@ -8,9 +8,10 @@ import login from '../pages/login/login.vue'
 import home from '../pages/home/home.vue'
 
 // 课程相关
-import course from '../pages/course/course.vue'
-import courseIntro from '../pages/course/course_intro.vue'
-import courseDetail from '../pages/course/detail.vue'
+import course from '../pages/course/course.vue' // 课程导航
+import courseIntro from '../pages/course/course_intro.vue'  // 课程介绍
+import courseDetail from '../pages/course/detail.vue'  // 免费课程细节
+import chargeDetail from '../pages/course/course_charge.vue'  // 付费课程细节
 
 // 下载相关
 import download from '../pages/download/download.vue'
@@ -78,6 +79,11 @@ export default new Router({
       path: '/comment',
       name: 'comment',
       component: comment
+    },
+    {
+      path: '/course_charge',
+      name: 'chargeCourse',
+      component: chargeDetail
     }
   ]
 })

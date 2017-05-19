@@ -12,7 +12,8 @@
         {{courseInfo.desc}}
       </div>
       <div class="course-note">
-        {{courseInfo.note}}
+        <span class="learn-num">{{courseInfo.note}}</span>
+        <span v-if="courseInfo.price" class="price">￥{{courseInfo.price}}</span>
       </div>
   </div>
 </template>
@@ -79,6 +80,9 @@
       font-size: 1.2em;
       color: $vice-color;
       margin: 1rem;
+      .price{
+        color: #ec1500;
+      }
     }
   }
 </style>

@@ -44,7 +44,13 @@ em,i{
   }
 }
 .checkbox{
-
+.icon{
+  font-size: 2rem;
+  color: #ec1500;
+}
+  input[type='checkbox'],input[type='radio']{
+    display: none;
+  }
 }
 /*public class end*/
 

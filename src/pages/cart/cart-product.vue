@@ -2,7 +2,7 @@
   <div class="cart-pro">
     <div class="left-wrapper">
       <label class="checkbox">
-        <i class="icon" :class="cartPro.checked ? 'icon-radio':'icon-radioed'"></i>
+        <i class="icon" :class="cartPro.checked ? 'icon-radio-checked':'icon-radio-unchecked'"></i>
         <input type="checkbox" v-model="cartPro.checked">
       </label>
     </div>
@@ -12,7 +12,7 @@
       </div>
       <div class="pro-name">
         <div class="title">{{cartPro.name}}</div>
-        <div class="price">{{cartPro.price}}</div>
+        <div class="price">￥{{cartPro.price}}</div>
       </div>
     </div>
 
