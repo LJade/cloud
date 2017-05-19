@@ -6,13 +6,7 @@
           <img :src="comment.avatarUrl" alt="">
         </div>
         <span class="name">{{comment.user}}</span>
-        <div class="star">
-          <i class="icon-stars"></i>
-          <i class="icon-stars"></i>
-          <i class="icon-stars"></i>
-          <i class="icon-stars"></i>
-          <i class="icon-stars"></i>
-        </div>
+        <star :score="comment.score/2"></star>
       </div>
       <div class="header-right">
         <div v-show="comment.time" class="time">{{comment.time}}</div>
@@ -22,14 +16,17 @@
   </div>
 </template>
 <script>
+  import star from './star.vue'
   export default {
     name: 'comment',
+    components: {
+      star
+    },
     props: {
       comment: Object
     },
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
       }
     }
   }
@@ -41,16 +38,13 @@
     padding: 1rem;
     border-bottom: 1px solid #e5e5e5;
     background: #ffffff;
-    &:last-child{
-      border-bottom: none;
-    }
     .comment-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       color: #666666;
       .header-left{
-        width: 60%;
+        width: 75%;
         .avatar,.name,.star{
           float: left;
           margin-right: 1rem;

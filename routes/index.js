@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Login  = require('./login/index')
 var Home  = require('./home/index')
+var Comments = require('./comments/index')
 
 /* GET home page. */
 module.exports = function (app) {
@@ -9,4 +10,6 @@ module.exports = function (app) {
   app.post('/api/login', Login.login);
   // 首页相关
   app.get('/api/recommend',Home.recommend)
+  // 评论相关
+  app.get('/api/comments',Comments.comments)
 };

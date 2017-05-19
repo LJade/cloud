@@ -21,6 +21,9 @@ import user from '../pages/user/user.vue'
 // 购物车相关
 import cart from '../pages/cart/cart.vue'
 
+// 评论相关
+import comment from '../pages/comment/commentlist.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -70,6 +73,11 @@ export default new Router({
       path: '/cart',
       name: 'cart',
       component: cart
+    },
+    {
+      path: '/comment',
+      name: 'comment',
+      component: comment
     }
   ]
 })

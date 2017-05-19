@@ -1,15 +1,29 @@
 <template>
-  <div class="hello">
+  <div class="common-list">
+    <div  v-for="comment in comments">
+      <comment :comment="comment"></comment>
+    </div>
   </div>
 </template>
 
 <script>
+  import comment from '../../components/comment.vue'
+  import { comments } from '../../api/index'
   export default {
     name: 'hello',
+    components: {
+      comment
+    },
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        comments: []
       }
+    },
+    mounted () {
+      comments.getCommentList().then(res => {
+        console.log(res)
+        this.comments = res
+      })
     }
   }
 </script>
