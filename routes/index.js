@@ -15,4 +15,5 @@ module.exports = function (app) {
   app.get('/api/comments',Comments.comments)
   // 购物车商品列表
   app.get('/api/cart',Cart.getCartList)
+  app.get('/api/addcart',Cart.addToCart)
 };

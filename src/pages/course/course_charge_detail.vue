@@ -45,7 +45,7 @@
     </div>
     <div class="bottom-fixed">
       <div class="price">￥{{course.price}}</div>
-      <button type="button" class="add-cart" @click="addToCart(course)">加入购物车</button>
+      <button type="button" class="add-cart" @click="addToShopCart(course)">加入购物车</button>
       <button type="button" class="go-buy">立即购买</button>
     </div>
   </div>
@@ -53,7 +53,8 @@
 
 <script>
   import comment from '../../components/comment.vue'
-  import { mapActions } from 'vuex'
+  import {MessageBox} from 'mint-ui'
+  import {mapActions} from 'vuex'
   export default {
     name: 'course_charge',
     components: {
@@ -83,7 +84,20 @@
       }
     },
     methods: {
-      ...mapActions(['addToCart'])
+      ...mapActions(['addToCart']),
+      addToShopCart () {
+        this.addToCart().then(res => {
+          if (res.status === 200) {
+            MessageBox('提示', '添加成功，快去购物车查看吧！')
+          } else if (res.status === 301) {
+            MessageBox('提示', '您已经添加过了哦，不能重复添加')
+          } else if (res.status === 304) {
+            MessageBox('提示', '啊哦，添加失败了')
+          }
+        }).catch((e) => {
+          MessageBox('提示', '连接错误')
+        })
+      }
     }
   }
 </script>

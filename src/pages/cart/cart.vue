@@ -3,7 +3,7 @@
     <cart-product v-for="cartPro in allProducts" :cartPro="cartPro" :key="cartPro.id"></cart-product>
     <div class="bottom-fixed">
       <label class="checkbox select-all" @click="selectAll">
-        <i class="icon" :class="selectAll ? 'icon-radio-checked':'icon-radio-unchecked'"></i>
+        <i class="icon" :class="selectAll.checked ? 'icon-radio-checked':'icon-radio-unchecked'"></i>
         <input type="radio" v-model="selectAll">全选
       </label>
       <div class="total">合计: ￥{{getTotal}}</div>
@@ -14,7 +14,7 @@
 
 <script>
   import CartProduct from './cart-product'
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapActions } from 'vuex'
   export default {
     components: {CartProduct},
     name: 'cart',
@@ -40,7 +40,11 @@
     methods: {
       selectAll () {
         this.selectAll = false
-      }
+      },
+      ...mapActions(['getAllProducts'])
+    },
+    created () {
+      this.getAllProducts()
     }
   }
 </script>
