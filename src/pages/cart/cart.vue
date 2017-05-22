@@ -1,10 +1,9 @@
 <template>
   <div class="shopping-cart">
-    <cart-product :cartPro="cartPro"></cart-product>
-    <cart-product :cartPro="cartPro2"></cart-product>
+    <cart-product v-for="cartPro in allProducts" :cartPro="cartPro" :key="cartPro.id"></cart-product>
     <div class="bottom-fixed">
       <label class="checkbox select-all" @click="selectAll">
-        <i class="icon" :class="cartPro.checked ? 'icon-radio-checked':'icon-radio-unchecked'"></i>
+        <i class="icon" :class="selectAll ? 'icon-radio-checked':'icon-radio-unchecked'"></i>
         <input type="radio" v-model="selectAll">全选
       </label>
       <div class="total">合计: ￥{{getTotal}}</div>
@@ -14,35 +13,28 @@
 </template>
 
 <script>
-  import cartPro from './cart-product.vue'
   import CartProduct from './cart-product'
+  import { mapGetters } from 'vuex'
   export default {
     components: {CartProduct},
     name: 'cart',
-    component: cartPro,
     data () {
       return {
-        selectAll: true,
-        cartPro: {
-          checked: true,
-          imgUrl: require('assets/images/cartpro.jpg'),
-          name: 'WebApp 书城整站开发',
-          price: 128.00
-        },
-        cartPro2: {
-          checked: false,
-          imgUrl: require('assets/images/cartpro.jpg'),
-          name: 'VueJS全家桶',
-          price: 236.9
-        }
+        selectFoods: [''],
+        selectAll: true
       }
     },
     computed: {
+      ...mapGetters(['allProducts']),
       getPay: function () {
         return '去结算'
       },
       getTotal: function () {
-        return 45
+        let total = 0
+        this.selectFoods.forEach((food) => {
+          total += food.price
+        })
+        return total
       }
     },
     methods: {

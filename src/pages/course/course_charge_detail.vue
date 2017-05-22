@@ -45,7 +45,7 @@
     </div>
     <div class="bottom-fixed">
       <div class="price">￥{{course.price}}</div>
-      <button type="button" class="add-cart">加入购物车</button>
+      <button type="button" class="add-cart" @click="addToCart(course)">加入购物车</button>
       <button type="button" class="go-buy">立即购买</button>
     </div>
   </div>
@@ -53,6 +53,7 @@
 
 <script>
   import comment from '../../components/comment.vue'
+  import { mapActions } from 'vuex'
   export default {
     name: 'course_charge',
     components: {
@@ -80,6 +81,9 @@
           price: 5420.2
         }
       }
+    },
+    methods: {
+      ...mapActions(['addToCart'])
     }
   }
 </script>

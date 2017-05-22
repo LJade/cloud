@@ -9,7 +9,7 @@ import home from '../pages/home/home.vue'
 
 // 课程相关
 import course from '../pages/course/course.vue' // 课程导航
-import courseIntro from '../pages/course/course_intro.vue'  // 课程介绍
+import courseList from '../pages/course/course_list.vue'  // 课程介绍
 import freeDetail from '../pages/course/cuorse_free_detail.vue'  // 免费课程细节
 import chargeDetail from '../pages/course/course_charge_detail.vue'  // 付费课程细节
 
@@ -61,9 +61,9 @@ export default new Router({
       component: user
     },
     {
-      path: '/course_intro',
-      name: 'courseIntro',
-      component: courseIntro
+      path: '/course_list',
+      name: 'courseList',
+      component: courseList
     },
     {
       path: '/course_free/:id',

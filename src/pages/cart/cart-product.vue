@@ -26,7 +26,8 @@
       cartPro: Object
     },
     data () {
-      return {}
+      return {
+      }
     }
   }
 </script>

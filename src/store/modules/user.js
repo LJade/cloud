@@ -19,7 +19,6 @@ const mutations = {
 
 const actions = {
   login ({commit}, data) {
-    console.log('actions', data)
     return user.login(data).then(res => {
       if (res && res.status === 200) {
         commit(LOGIN_SUCCESS, res.data)
