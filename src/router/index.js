@@ -10,8 +10,8 @@ import home from '../pages/home/home.vue'
 // 课程相关
 import course from '../pages/course/course.vue' // 课程导航
 import courseIntro from '../pages/course/course_intro.vue'  // 课程介绍
-import courseDetail from '../pages/course/detail.vue'  // 免费课程细节
-import chargeDetail from '../pages/course/course_charge.vue'  // 付费课程细节
+import freeDetail from '../pages/course/cuorse_free_detail.vue'  // 免费课程细节
+import chargeDetail from '../pages/course/course_charge_detail.vue'  // 付费课程细节
 
 // 下载相关
 import download from '../pages/download/download.vue'
@@ -66,9 +66,9 @@ export default new Router({
       component: courseIntro
     },
     {
-      path: '/course_detail',
+      path: '/course_free/:id',
       name: 'courseDetail',
-      component: courseDetail
+      component: freeDetail
     },
     {
       path: '/cart',
@@ -81,7 +81,7 @@ export default new Router({
       component: comment
     },
     {
-      path: '/course_charge',
+      path: '/course_charge/:id',
       name: 'chargeCourse',
       component: chargeDetail
     }

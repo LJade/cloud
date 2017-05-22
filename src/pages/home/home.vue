@@ -44,12 +44,23 @@
           <span class="menu-tag">发现</span>
         </router-link>
       </div>
-      <course-sort :sortInfo="sortInfo"></course-sort>
+      <course-sort :sortInfo="sortInfoRec"></course-sort>
       <div class="course-list clear-fix">
-        <course-info :courseInfo="courseInfo"></course-info>
-        <course-info :courseInfo="courseInfo"></course-info>
-        <course-info :courseInfo="courseInfo"></course-info>
-        <course-info :courseInfo="courseInfo"></course-info>
+        <course-info
+          v-for="course in courseInfoRec"
+          :courseInfo="course"
+          :key="course.id"
+          @clickBox="clickBox">
+        </course-info>
+      </div>
+      <course-sort :sortInfo="sortInfoPra"></course-sort>
+      <div class="course-list clear-fix">
+        <courseInfo
+          v-for="course in courseInfoPra"
+          :courseInfo="course"
+          :key="course.id"
+          @clickBox="clickBox"
+        ></courseInfo>
       </div>
     </div>
   </div>
@@ -73,23 +84,34 @@
     data () {
       return {
         headerTitle: '首页',
-        sortInfo: {
-          iconClass: 'icon-recommand',
+        sortInfoRec: {
+          iconClass: 'icon-recommend',
           content: '课程推荐',
           handle: true
         },
-        courseInfo: {
-          name: ['CSS', '前端工具', 'VueJS', 'VueX'],
-          title: '使用2.0实现购物车和地址选配功能,还有很多功能是很炫酷',
-          desc: '本视频教程集合案例贯穿各个知识点，轻松玩转vue2,实现各种牛逼功能',
-          note: '1125人学习',
-          price: 235
+        sortInfoPra: {
+          iconClass: 'icon-good',
+          content: '实战推荐',
+          handle: true
+        },
+        courseInfoRec: {
+        },
+        courseInfoPra: {
         }
+      }
+    },
+    methods: {
+      clickBox (id, isCharge) {
+        let path = isCharge ? '/course_charge/' : '/course_free/'
+        this.$router.push(path + id)
       }
     },
     mounted () {
       home.getRecommendCourse().then(res => {
-        console.log(res)
+        this.courseInfoRec = res
+      })
+      home.getPracticeCourse().then(res => {
+        this.courseInfoPra = res
       })
     },
     computed: {

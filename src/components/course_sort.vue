@@ -36,10 +36,11 @@
     padding: 1rem 0;
     h4{
       text-align: center;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       color: #666666;
       i{
-        font-size: 1.2rem;
+        font-size: 1.8rem;
+        color: #1db1f7
       }
     }
     .sort-link{

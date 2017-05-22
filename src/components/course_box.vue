@@ -1,8 +1,8 @@
 <template>
-  <div class="course-box">
+  <div class="course-box" @click="goDetail(courseInfo.id, courseInfo.isCharge)">
       <div class="course-name">
         <span v-for="item in courseInfo.name">
-          {{ item }}
+          {{item}}
         </span>
       </div>
       <div class="course-title">
@@ -26,6 +26,11 @@
     },
     props: {
       courseInfo: Object
+    },
+    methods: {
+      goDetail (id, isCharge) {
+        this.$emit('clickBox', id, isCharge)
+      }
     }
   }
 </script>
@@ -80,6 +85,8 @@
       font-size: 1.2em;
       color: $vice-color;
       margin: 1rem;
+      display: flex;
+      justify-content: space-between;
       .price{
         color: #ec1500;
       }
