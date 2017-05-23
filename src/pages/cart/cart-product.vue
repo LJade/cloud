@@ -1,12 +1,12 @@
 <template>
-  <div class="cart-pro">
+  <div class="cart-pro" >
     <div class="left-wrapper">
       <label class="checkbox">
         <i class="icon" :class="cartPro.checked ? 'icon-radio-checked':'icon-radio-unchecked'"></i>
-        <input type="checkbox" v-model="cartPro.checked">
+        <input type="checkbox"  @click.stop.prevent="selectPro(cartPro)">
       </label>
     </div>
-    <div class="right-wrapper">
+    <div class="right-wrapper" @click.stop="selectPro(cartPro)">
       <div class="img-wrapper">
         <img :src="cartPro.imgUrl" alt="">
       </div>
@@ -15,7 +15,6 @@
         <div class="price">￥{{cartPro.price}}</div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -27,6 +26,11 @@
     },
     data () {
       return {
+      }
+    },
+    methods: {
+      selectPro (product) {
+        this.$emit('selectPro', product)
       }
     }
   }

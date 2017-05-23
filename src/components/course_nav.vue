@@ -2,12 +2,14 @@
   <div class="course-nav">
     <div class="title">{{courseData.title}}</div>
     <div class="course-list">
-      <div class="course-wrapper" v-for="course in courseData.courses">
-            <div class="icon-wrapper" :style="{background:course.color}">
-              <i class="icon":class="course.iconName"></i>
-            </div>
-            <span>{{course.type}}</span>
-      </div>
+        <div class="course-wrapper" v-for="course in courseData.courses">
+          <router-link to="/course_list">
+          <div class="icon-wrapper" :style="{background:course.color}">
+            <i class="icon":class="course.iconName"></i>
+          </div>
+          <span>{{course.type}}</span>
+          </router-link>
+        </div>
     </div>
   </div>
 </template>

@@ -29,7 +29,7 @@
               </div>
             </div>
             <comment :comment="course.comment"></comment>
-            <router-link to="" class="go-comments">
+            <router-link to="/comment" class="go-comments">
               查看全部评价({{course.commentNum}})
             </router-link>
           </div>
@@ -45,7 +45,7 @@
     </div>
     <div class="bottom-fixed">
       <div class="price">￥{{course.price}}</div>
-      <button type="button" class="add-cart" @click="addToShopCart(course)">加入购物车</button>
+      <button type="button" class="add-cart" @click="addToShopCart(course.id)">加入购物车</button>
       <button type="button" class="go-buy">立即购买</button>
     </div>
   </div>
@@ -85,8 +85,9 @@
     },
     methods: {
       ...mapActions(['addToCart']),
-      addToShopCart () {
-        this.addToCart().then(res => {
+      addToShopCart (id) {
+        this.addToCart(id).then(res => {
+          console.log(0, res)
           if (res.status === 200) {
             MessageBox('提示', '添加成功，快去购物车查看吧！')
           } else if (res.status === 301) {
@@ -95,6 +96,7 @@
             MessageBox('提示', '啊哦，添加失败了')
           }
         }).catch((e) => {
+          console.log(e)
           MessageBox('提示', '连接错误')
         })
       }

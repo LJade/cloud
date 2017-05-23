@@ -30,7 +30,7 @@
     <div class="detail-comment">
       <div class="comment-intro">
         <div class="score">综合评分<span>{{courseDetail.commentScore}}</span></div>
-        <router-link to="">查看全部{{courseDetail.commentNum}}人评价</router-link>
+        <router-link to="/comment">查看全部{{courseDetail.commentNum}}人评价</router-link>
       </div>
       <comment-box :comment="courseDetail.comment"></comment-box>
     </div>

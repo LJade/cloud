@@ -9,7 +9,7 @@
         <router-link to="/home">
           <i class="icon icon-envelope"></i>
         </router-link>
-        <router-link to="/home">
+        <router-link to="/cart">
           <i class="icon icon-cart"></i>
         </router-link>
       </div>
