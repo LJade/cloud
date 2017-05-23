@@ -25,6 +25,9 @@ import cart from '../pages/cart/cart.vue'
 // 评论相关
 import comment from '../pages/comment/commentlist.vue'
 
+// 视频播放
+import video from '../pages/video/video.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -84,6 +87,11 @@ export default new Router({
       path: '/course_charge/:id',
       name: 'chargeCourse',
       component: chargeDetail
+    },
+    {
+      path: '/video',
+      name: 'video',
+      component: video
     }
   ]
 })
