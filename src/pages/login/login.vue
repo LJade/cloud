@@ -21,13 +21,28 @@
           <button @click="loginSubmit">登录</button>
         </div>
       </div>
-      <p class="forget-pass">
-        <router-link to="">忘记密码</router-link>
-      </p>
-      <p class="register-link">
-        <router-link to="">注册</router-link>
-      </p>
-      <div class="social-login">社交账号登录</div>
+      <router-link to="" class="forget-pass">忘记密码</router-link>
+      <transition name="fade">
+        <div v-show="socialLogin===false">
+          <router-link to="" class="register-link">注册</router-link>
+          <div class="social-login" @click="loginToggle">社交账号登录</div>
+        </div>
+      </transition>
+      <transition name="fade">
+        <div v-show="socialLogin===true">
+          <div class="social-login-title" @click="loginToggle">
+            <span class="line"></span>
+            <div class="text">社交账号登录</div>
+            <span class="line"></span>
+          </div>
+          <div class="social-login-block">
+            <div class="wechat"><i class="icon-weixin"></i></div>
+            <div class="qq"><i class="icon-QQ"></i></div>
+            <div class="weibo"><i class="icon-weibo"></i></div>
+          </div>
+        </div>
+      </transition>
+
     </div>
   </div>
 </template>
@@ -41,13 +56,14 @@
       return {
         username: '',
         password: '',
-        isSeen: false
+        isSeen: false,
+        socialLogin: false
       }
     },
     methods: {
       ...mapActions(['login']),
       loginSubmit () {
-        const { username, password } = this
+        const {username, password} = this
         if (username && password) {
           this.login({username, password}).then(res => {
             if (res.data && res.status === 200) {
@@ -65,6 +81,9 @@
       passwordDisplay: function () {
         this.isSeen = !this.isSeen
         this.$refs.psd.type = this.isSeen ? 'text' : 'password'
+      },
+      loginToggle () {
+        this.socialLogin = !this.socialLogin
       }
     }
   }
@@ -142,14 +161,63 @@
     text-align: center;
     color: $font-color;
     line-height: 4rem;
-    a {
-      display: block;
-      line-height: 4rem;
-      color: $font-color;
-    }
+    display: block;
+  }
+
+  .forget-pass {
+    margin-top: 3rem;
   }
 
   .register-link {
-    margin-top: 5rem;
+    margin-top: 7rem;
+  }
+
+  .social-login-title {
+    display: flex;
+    width: 80%;
+    margin: 7rem auto 2rem;
+    .line {
+      flex: 1;
+      position: relative;
+      top: -0.7rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .text {
+      padding: 0 1rem;
+    }
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+
+  .fade-enter, .fade-leave-active {
+    opacity: 0
+  }
+
+  .social-login-block {
+    display: flex;
+    align-content: space-around;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    i {
+      font-size: 3.2rem;
+    }
+    .wechat {
+      i {
+        color: #148158;
+      }
+    }
+    .qq {
+      i {
+        color: #1f779f
+      }
+    }
+    .weibo {
+      i {
+        color: #951305;
+      }
+    }
   }
 </style>
