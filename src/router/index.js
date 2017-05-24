@@ -34,6 +34,9 @@ import video from '../pages/video/video.vue'
 // 购买相关
 import payment from '../pages/payment/payment.vue'
 
+// 实战相关
+import practice from '../pages/practice/practice.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -108,6 +111,11 @@ export default new Router({
       path: '/payment',
       name: 'payment',
       component: payment
+    },
+    {
+      path: '/practice',
+      name: 'practice',
+      component: practice
     }
   ]
 })
