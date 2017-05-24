@@ -45,15 +45,7 @@
       </div>
       <div class="note-block">
         <div class="note-title">课程提纲</div>
-        <div class="course-menu">
-          <div class="course-chapter" v-for="chapter in courseDetail.chapters">
-            <div class="chapter-title">{{chapter.title}}</div>
-            <div class="chapter-item" v-for="item in chapter.section" data-bind="item.id">
-              <i class="icon icon-play3"></i>
-              {{item.name}}
-            </div>
-          </div>
-        </div>
+          <chapter-list :chapters="courseDetail.chapters"></chapter-list>
       </div>
     </div>
     <button id="learnBtn">开始学习</button>
@@ -62,10 +54,12 @@
 
 <script>
   import commentBox from '../../components/comment.vue'
+  import chapterList from '../../components/chapter_list.vue'
   export default {
     name: 'detail',
     components: {
-      commentBox
+      commentBox,
+      chapterList
     },
     data () {
       return {
@@ -252,10 +246,6 @@
         }
       }
     }
-    .course-menu{
-      display: flex;
-      flex-direction: column;
-      padding-left: 2rem;
       .course-chapter{
         border-left: 1px solid #e5e5e5;
         padding-left: 2rem;
@@ -280,7 +270,6 @@
           color: #666666;
         }
       }
-    }
   }
 
   #learnBtn {

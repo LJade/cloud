@@ -39,7 +39,7 @@
 <style scoped lang="scss">
   @import "../assets/base";
   .course-box {
-    width: 13.5rem;
+    width: 14rem;
     height: 14rem;
     background: #ffffff;
     overflow: hidden;
@@ -48,12 +48,8 @@
     box-shadow: 0 0 1px 2px $border-color;
     font-size: 1rem;
     line-height: 1.5em;
-    float: left;
-    margin-right: 1rem;
     margin-bottom: 1rem;
-    &:nth-child(even){
-      margin-right: 0;
-    }
+    flex: 0 0 auto;
     .course-name{
       height: 3em;
       line-height: 3em;

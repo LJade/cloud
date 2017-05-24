@@ -45,7 +45,7 @@
         </router-link>
       </div>
       <course-sort :sortInfo="sortInfoRec"></course-sort>
-      <div class="course-list clear-fix">
+      <div class="course-list">
         <course-info
           v-for="course in courseInfoRec"
           :courseInfo="course"
@@ -189,6 +189,8 @@
 
   .course-list{
     padding: 1rem;
-
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 </style>

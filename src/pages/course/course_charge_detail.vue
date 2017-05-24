@@ -6,14 +6,14 @@
         <button><i class="icon icon-play3"></i> 试学</button>
       </div>
       <div class="nav-tab">
-        <div class="tab-item">介绍</div>
-        <div class="tab-item">章节</div>
-        <div class="tab-item">评价</div>
-        <div class="tab-item">咨询</div>
+        <div class="tab-item" @click="tab('intro')">介绍</div>
+        <div class="tab-item" @click="tab('chapter')">章节</div>
+        <div class="tab-item" @click="tab('comment')">评价</div>
+        <div class="tab-item" @click="tab('consult')">咨询</div>
       </div>
     </div>
     <div class="charge-body">
-      <div class="tab-body">
+      <div class="tab-body" v-show="tabName==='intro'">
         <div class="intro">
           <p>{{course.intro}}</p>
           <div><span>难度:{{course.level}}</span>
@@ -42,6 +42,11 @@
           <img :src="img" alt="">
         </div>
       </div>
+      <div class="tab-body" v-show="tabName==='chapter'">
+        <chapter-list :chapters="course.chapters"></chapter-list>
+      </div>
+      <div class="tab-body" v-show="tabName==='comment'">55555</div>
+      <div class="tab-body" v-show="tabName==='consult'">66666</div>
     </div>
     <div class="bottom-fixed">
       <div class="price">￥{{course.price}}</div>
@@ -53,15 +58,18 @@
 
 <script>
   import comment from '../../components/comment.vue'
+  import chapterList from '../../components/chapter_list.vue'
   import {MessageBox} from 'mint-ui'
   import {mapActions} from 'vuex'
   export default {
     name: 'course_charge',
     components: {
-      comment
+      comment,
+      chapterList
     },
     data () {
       return {
+        tabName: 'intro',
         course: {
           id: 'asw34q4v',
           intro: 'ES6从零开始，两声设计的迷你案例，让你全面掌握ES6',
@@ -79,7 +87,31 @@
             score: 10,
             content: '其实写个评论也很难啊，好呢还是不好呢，就这吧，我觉得还好啦'
           },
-          price: 5420.2
+          price: 5420.2,
+          chapters: [{
+            title: '课程介绍',
+            section: [{name: '虚拟化技术0', id: 'efs54w5d'},
+              {name: '虚拟化技术1', id: '04442cds'},
+              {name: '虚拟化技术2', id: 'dv5dd501'},
+              {name: '虚拟化技术3', id: '547d1f5e'},
+              {name: '虚拟化技术3', id: '547d1f5e'},
+              {name: '虚拟化技术3', id: '547d1f5e'}
+            ]
+          },
+          {
+            title: '虚拟技术',
+            section: [{name: '虚拟原理0', id: '21f11f1e'},
+              {name: '虚拟原理1', id: 'xdf1ee5f'},
+              {name: '虚拟原理2', id: '45g1g5bg'},
+              {name: '虚拟原理3', id: 'g451n5gf'}]
+          },
+          {
+            title: '内存技术',
+            section: [{name: '缺页终端还是', id: '21f11f1e'},
+              {name: '访问SPA站点', id: 'xdf1ee5f'},
+              {name: '内存的分类和未来', id: '45g1g5bg'}]
+          }
+          ]
         }
       }
     },
@@ -99,6 +131,22 @@
           console.log(e)
           MessageBox('提示', '连接错误')
         })
+      },
+      tab (type) {
+        switch (type) {
+          case 'intro':
+            this.tabName = 'intro'
+            break
+          case 'chapter':
+            this.tabName = 'chapter'
+            break
+          case 'comment':
+            this.tabName = 'comment'
+            break
+          case 'consult':
+            this.tabName = 'consult'
+            break
+        }
       }
     }
   }
@@ -147,6 +195,7 @@
   }
 
   .charge-body {
+    margin-top: 3px;
     .intro {
       background: #ffffff;
       width: 94%;
