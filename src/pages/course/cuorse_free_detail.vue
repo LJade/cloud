@@ -48,7 +48,7 @@
           <chapter-list :chapters="courseDetail.chapters"></chapter-list>
       </div>
     </div>
-    <button id="learnBtn">开始学习</button>
+    <router-link to="/video" id="learnBtn">开始学习</router-link>
   </div>
 </template>
 

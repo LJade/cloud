@@ -13,7 +13,7 @@
         </mt-swipe>
       </div>
       <div class="nav-menu">
-        <router-link to="">
+        <router-link to="/practice">
           <div class="icon-wrapper">
             <i class="icon icon-project"></i>
           </div>
