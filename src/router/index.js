@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+// 注册相关
+import register from '../pages/register/register.vue'
+
 // 登录相关
 import login from '../pages/login/login.vue'
 
@@ -28,6 +31,9 @@ import comment from '../pages/comment/commentlist.vue'
 // 视频播放
 import video from '../pages/video/video.vue'
 
+// 购买相关
+import payment from '../pages/payment/payment.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -42,6 +48,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: register
     },
     {
       path: '/home',
@@ -92,6 +103,11 @@ export default new Router({
       path: '/video',
       name: 'video',
       component: video
+    },
+    {
+      path: '/payment',
+      name: 'payment',
+      component: payment
     }
   ]
 })

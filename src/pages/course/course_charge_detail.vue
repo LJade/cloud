@@ -6,10 +6,10 @@
         <button><i class="icon icon-play3"></i> 试学</button>
       </div>
       <div class="nav-tab">
-        <div class="tab-item" @click="tab('intro')">介绍</div>
-        <div class="tab-item" @click="tab('chapter')">章节</div>
-        <div class="tab-item" @click="tab('comment')">评价</div>
-        <div class="tab-item" @click="tab('consult')">咨询</div>
+        <div class="tab-item" @click="tab('intro')" :class="{active:tabName==='intro'}"><span>介绍</span></div>
+        <div class="tab-item" @click="tab('chapter')" :class="{active:tabName==='chapter'}"><span>章节</span></div>
+        <div class="tab-item" @click="tab('comment')" :class="{active:tabName==='comment'}"><span>评价</span></div>
+        <div class="tab-item" @click="tab('consult')" :class="{active:tabName==='consult'}"><span>咨询</span></div>
       </div>
     </div>
     <div class="charge-body">
@@ -190,6 +190,15 @@
       line-height: 3;
       .tab-item {
         width: 25%;
+        text-align: center;
+        &.active {
+          span {
+            display: inline-block;
+            line-height: 3;
+            color: #c9394a;
+            border-bottom: 1px solid #c9394a;
+          }
+        }
       }
     }
   }

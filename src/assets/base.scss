@@ -64,3 +64,142 @@ em,i{
   overflow: hidden;
 }
 /*mixin end*/
+
+
+/* 注册和登录 */
+.login,.login .mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+}
+.login {
+  background: url("/static/images/loginbg.jpg") no-repeat;
+  background-size: 100% 100%;
+  $font-color: #a6a6a6;
+  .mask {
+    background: rgba(0, 0, 0, 0.6);
+    h2 {
+      color: #ffffff;
+      font-size: 2.4rem;
+      text-align: center;
+      font-weight: 400;
+      margin: 8rem 0 3rem;
+    }
+    .form-group {
+      position: relative;
+      margin-bottom: 5px;
+      .icon-wrapper {
+        position: absolute;
+        right: 2rem;
+        top: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        i {
+          font-size: 1.6rem;
+          line-height: 4rem;
+          color: $font-color;
+        }
+      }
+      input {
+        width: 100%;
+        background: rgba(68, 77, 84, 0.2);
+        line-height: 4rem;
+        outline: none;
+        border: none;
+        text-indent: 2rem;
+        color: #ffffff;
+        &::-webkit-input-placeholder {
+          text-indent: 2rem;
+          color: $font-color;
+        }
+      }
+      button {
+        display: block;
+        border: none;
+        background: rgba(40, 93, 124, 0.6);
+        width: 70%;
+        margin: 2rem auto;
+        color: #ffffff;
+        padding: 1rem;
+        line-height: 2rem;
+      }
+    }
+    .get-verification {
+      position: absolute;
+      right: 2rem;
+      top: 5px;
+      padding: 1rem;
+      color: #0088af;
+    }
+    .handle-tip{
+      text-align: center;
+      line-height: 4rem;
+      display: block;
+      color: $font-color;
+    }
+    .go-login {
+      display: block;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.6rem;
+      position: absolute;
+      bottom: 4rem;
+      left: 0;
+      text-align: center;
+      width: 100%;
+      line-height: 3;
+    }
+    .go-register {
+      margin-top: 7rem;
+    }
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity .5s
+    }
+
+    .fade-enter, .fade-leave-active {
+      opacity: 0
+    }
+    .social-login-title {
+      display: flex;
+      width: 80%;
+      margin: 7rem auto 2rem;
+      color:$font-color;
+      .line {
+        flex: 1;
+        position: relative;
+        top: -0.7rem;
+        border-bottom: 1px solid $font-color;
+      }
+      .text {
+        padding: 0 1rem;
+      }
+    }
+    .social-login-block {
+      display: flex;
+      align-content: space-around;
+      justify-content: space-around;
+      width: 80%;
+      margin: 0 auto;
+      i {
+        font-size: 3.2rem;
+      }
+      .wechat {
+        i {
+          color: #148158;
+        }
+      }
+      .qq {
+        i {
+          color: #1f779f
+        }
+      }
+      .weibo {
+        i {
+          color: #951305;
+        }
+      }
+    }
+  }
+}
+
+
