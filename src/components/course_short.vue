@@ -31,6 +31,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import "../assets/color";
   .course-intro-box{
     background: #fff;
     padding:  0 1rem;
@@ -41,7 +42,7 @@
     }
     .inner-wrapper{
       padding:  1rem 0;
-      border-bottom: 1px solid #e5e5e5;
+      border-bottom: 1px solid $border-color;
       width: 100%;
       display: flex;
       align-items: center;
@@ -64,7 +65,7 @@
         }
         .desc{
           height: 4rem;
-          color: #e5e5e5;
+          color: $border-color;
           font-size: 1rem;
         }
         .intro{
@@ -72,11 +73,11 @@
           .level{
             padding: 1px 4px;
             background: #cccccc;
-            color: #ffffff;
+            color: $white-color;
             border-radius: 3px;
           }
           .count{
-            color: #666666;
+            color: $main-color;
             margin-left: 1.5rem;
           }
         }

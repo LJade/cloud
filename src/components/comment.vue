@@ -34,15 +34,16 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import "../assets/color";
   .comment-box {
     padding: 1rem;
-    border-bottom: 1px solid #e5e5e5;
-    background: #ffffff;
+    border-bottom: 1px solid $border-color;
+    background: $white-color;
     .comment-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #666666;
+      color: $main-color;
       .header-left{
         width: 75%;
         .avatar,.name,.star{
@@ -61,7 +62,7 @@
           }
         }
         .star{
-          color: #999999;
+          color: $vice-color;
         }
       }
     }

@@ -148,6 +148,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import "../../assets/color";
   .course-charge {
     padding-bottom: 4rem;
   }
@@ -157,11 +158,11 @@
   }
 
   .charge-header {
-    background: #fff;
+    background: $white-color;
     box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.2);
     .nav-header {
       height: 10rem;
-      color: #ffffff;
+      color: $white-color;
       background: #fff url("../../assets/images/bg1.png") no-repeat;
       background-size: 100%;
       padding-top: 3rem;
@@ -170,7 +171,7 @@
         font-size: 1.6rem;
       }
       button {
-        color: #fff;
+        color: $white-color;
         padding: 0.8rem 2.5rem;
         border: 1px solid rgba(255, 255, 255, 0.5);
         background: transparent;
@@ -189,8 +190,8 @@
           span {
             display: inline-block;
             line-height: 3;
-            color: #c9394a;
-            border-bottom: 1px solid #c9394a;
+            color: $active-color;
+            border-bottom: 1px solid $active-color;
           }
         }
       }
@@ -200,7 +201,7 @@
   .charge-body {
     margin-top: 3px;
     .intro {
-      background: #ffffff;
+      background: $white-color;
       width: 94%;
       border-radius: 3px;
       margin: 1rem auto;
@@ -227,14 +228,14 @@
       }
     }
     .comment-pre {
-      background: #ffffff;
+      background: $white-color;
       width: 94%;
       border-radius: 3px;
       margin: 1rem auto;
       box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
       .inner-pre {
         padding: 1rem 1rem 0 1rem;
-        border-bottom: 1px solid #e5e5e5;
+        border-bottom: 1px solid $border-color;
       }
       .title {
         font-size: 1.6rem;
@@ -242,7 +243,7 @@
           line-height: 2;
         }
         em {
-          color: #ec1500;
+          color: $red-color;
         }
         .comment-tag {
           font-size: 1.3rem;
@@ -250,8 +251,8 @@
             display: inline-block;
             margin-right: 1rem;
             padding: 5px;
-            border: 1px solid #e5e5e5;
-            color: #666666;
+            border: 1px solid $border-color;
+            color: $main-color;
             i {
               color: #000;
               margin-left: 5px;
@@ -262,8 +263,8 @@
       .go-comments {
         display: block;
         font-size: 1.6rem;
-        color: #666666;
-        border: 1px solid #e5e5e5;
+        color: $main-color;
+        border: 1px solid $border-color;
         text-align: center;
         padding: 1rem;
         border-radius: 3px;
@@ -274,7 +275,7 @@
         display: block;
         white-space: nowrap;
         padding: 1rem;
-        color: #666666;
+        color: $main-color;
         line-height: 2;
         overflow: hidden;
       }
@@ -301,17 +302,17 @@
       width: 33.3%;
     }
     .price {
-      color: #ec1500;
+      color: $red-color;
       text-align: center;
     }
     .add-cart, .go-buy {
       height: 4rem;
       border: none;
       outline: none;
-      color: #ffffff;
+      color: $white-color;
     }
     .add-cart {
-      background: #ffa020;
+      background: $btn-yellow;
     }
     .go-buy {
       background: #ff2d52;

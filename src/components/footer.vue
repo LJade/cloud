@@ -34,14 +34,15 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss" rel="stylesheet/scss">
+  @import "../assets/color";
   #common_footer{
     width: 100%;
     height: 5rem;
     position: fixed;
     bottom:0;
     left: 0;
-    background: #ffffff;
-    box-shadow: 0 1px 2px 2px #e5e5e5;
+    background: $white-color;
+    box-shadow: 0 1px 2px 2px $border-color;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -59,7 +60,7 @@
   }
   .router-link-active{
     span.tag,i{
-      color: #ec1500
+      color: $red-color
     };
   }
 </style>

@@ -152,10 +152,11 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import "../../assets/color";
   .user-header {
     width: 100%;
     height: 14rem;
-    background: #ffffff;
+    background: $white-color;
     .user-intro, .user-info {
       display: flex;
       align-items: center;
@@ -183,7 +184,7 @@
           padding-left: 1rem;
           margin: 1rem 0;
           font-size: 1.2rem;
-          color: #999999;
+          color: $vice-color;
           span {
             em {
               margin: 0 1rem;
@@ -192,7 +193,7 @@
               :after {
                 content: '|';
                 font-size: 1rem;
-                color: #e5e5e5;
+                color: $border-color;
                 display: inline-block;
                 padding-left: 1rem;
               }
@@ -221,7 +222,7 @@
           &:after {
             content: '|';
             font-size: 1rem;
-            color: #e5e5e5;
+            color: $border-color;
             display: inline-block;
             position: absolute;
             right: 0;;
@@ -236,7 +237,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #ffffff;
+    background: $white-color;
     margin-top: 1rem;
     a{
       display: block;
@@ -275,7 +276,7 @@
 
   }
   .user-link{
-    background: #ffffff;
+    background: $white-color;
     margin-top: 1rem;
     a{
       display: flex;
@@ -283,7 +284,7 @@
       justify-content: space-between;
       padding-left: 1rem;
       padding-right: 1rem;
-      color: #666666;
+      color: $main-color;
       i{
         font-size: 1.8rem;
         vertical-align: sub;

@@ -63,12 +63,13 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import "../../assets/color";
   .payment, .protocol, .title, .pay-info, .pay-content {
     padding: 1rem;
   }
   .pay-block {
-    color: #999999;
-    background: #ffffff;
+    color: $vice-color;
+    background: $white-color;
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
     margin-bottom: 1rem;
     .pay-info {
@@ -76,7 +77,7 @@
       justify-content: space-between;
     }
     .pay-content {
-      border-top: 1px solid #e5e5e5;
+      border-top: 1px solid $border-color;
       img {
         height: 3rem;
       }
@@ -103,7 +104,7 @@
   }
 
   .money {
-    color: #ec1500;
+    color: $red-color;
   }
 
   .fixed-bottom {
@@ -117,8 +118,8 @@
     justify-content: space-between;
     line-height: 4rem;
     .pay-btn {
-      background: #ec1500;
-      color: #ffffff;
+      background: $red-color;
+      color: $white-color;
       height: 4rem;
       width: 40%;
       font-size: 1.6rem;

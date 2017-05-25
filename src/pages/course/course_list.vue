@@ -97,12 +97,13 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import "../../assets/color";
   .course-header {
     height: 15rem;
     text-align: center;
     background: #41a3ec;
     .icon-wrapper {
-      color: #ffffff;
+      color: $white-color;
       padding: 2rem 2rem 0 2rem;
       i {
         font-size: 5rem;
@@ -110,7 +111,7 @@
       }
     }
     h3 {
-      color: #ffffff;
+      color: $white-color;
       margin: 1.5rem auto;
     }
     .tab-header {
@@ -123,9 +124,9 @@
           line-height: 4rem;
         }
         &.active {
-          color: rgb(255, 255, 255);
+          color: $white-color;
           span {
-            border-bottom: 2px solid #ffffff;
+            border-bottom: 2px solid $white-color;
           }
         }
       }

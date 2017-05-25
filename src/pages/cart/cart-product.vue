@@ -38,13 +38,14 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import "../../assets/color";
 .cart-pro{
   height: 8rem;
   display: flex;
   justify-content:space-between;
   align-items: center;
   padding: 1rem;
-  background: #ffffff;
+  background: $white-color;
   overflow: hidden;
   .right-wrapper{
     width: 90%;
@@ -65,7 +66,7 @@
       align-content: space-between;
       justify-content: space-around;
       .price{
-        color: #ff2d52;
+        color: $red-color;
       }
     }
   }

@@ -31,7 +31,7 @@
           </div>
           <span class="menu-tag">猿问</span>
         </router-link>
-        <router-link to="">
+        <router-link to="/mark">
           <div class="icon-wrapper">
             <i class="icon icon-mark"></i>
           </div>
@@ -122,6 +122,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import "../../assets/color";
   .banner {
     width: 100%;
     height: 11.25rem;
@@ -134,7 +135,7 @@
   .nav-menu {
     width: 100%;
     height: 8rem;
-    background: #ffffff;
+    background: $white-color;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -153,7 +154,7 @@
         i {
           font-size: 2rem;
           line-height: 3.5rem;
-          color: #ffffff;
+          color: $white-color;
         }
       }
       &:nth-child(1) {

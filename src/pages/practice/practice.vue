@@ -76,6 +76,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import "../../assets/color";
   .banner {
     width: 100%;
     height: 11.25rem;
@@ -86,7 +87,7 @@
   }
 
   .classify {
-    background: #ffffff;
+    background: $white-color;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -102,14 +103,14 @@
       &.active {
         background: #fd2d4f;
         border: 1px solid #fd2d4f;
-        color: #ffffff;
+        color: $white-color;
       }
     }
   }
 
   .list {
     .course-preview {
-      border-bottom: 1px solid #e5e5e5;
+      border-bottom: 1px solid $border-color;
       padding: 1rem;
       &:last-child {
         border-bottom: 0;

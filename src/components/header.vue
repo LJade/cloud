@@ -3,7 +3,7 @@
     <header id="common_header">
       <h1>{{headerText}}</h1>
       <div class="nav-link">
-        <router-link to="/home">
+        <router-link to="/search">
           <i class="icon icon-search"></i>
         </router-link>
         <router-link to="/home">
@@ -32,6 +32,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss" rel="stylesheet/scss">
+  @import "../assets/color";
   #common_header {
     width: 100%;
     height: 6rem;
@@ -39,7 +40,7 @@
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    color: $white-color;
     z-index: 100;
     display: flex;
     align-items: center;
@@ -53,7 +54,7 @@
       flex: 2 0 auto;
       text-align: right;
       a {
-        color: #ffffff;
+        color: $white-color;
         margin-right: 2rem;
         padding: 5px;
         i.icon {

@@ -26,6 +26,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import "../assets/color";
   .chapter{
     display: flex;
     flex-direction: column;
@@ -33,7 +34,7 @@
     background: #fff;
   }
   .course-chapter{
-    border-left: 1px solid #e5e5e5;
+    border-left: 1px solid $border-color;
     padding-left: 2rem;
     position: relative;
     &:before{
@@ -43,7 +44,7 @@
       width: 1rem;
       height: 1rem;
       border-radius: 50%;
-      background: #e5e5e5;
+      background: $border-color;
       left: -0.5rem;
     }
     &:last-child{
@@ -53,7 +54,7 @@
     }
     .chapter-item{
       line-height: 2.5;
-      color: #666666;
+      color: $main-color;
     }
   }
 </style>

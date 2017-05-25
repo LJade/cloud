@@ -65,12 +65,13 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import "../../assets/color";
   .bottom-fixed {
     width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
-    background: #ffffff;
+    background: $white-color;
     line-height: 4rem;
     display: flex;
     align-items: center;
@@ -85,13 +86,13 @@
       }
     }
     .total {
-      color: #000000;
+      color: $black-color;
       font-weight: 400;
       width: 30%;
     }
     .pay-btn {
-      background: #ec1500;
-      color: #ffffff;
+      background: $red-color;
+      color: $white-color;
       outline: none;
       border: none;
       width: 30%;

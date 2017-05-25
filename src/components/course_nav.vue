@@ -29,12 +29,13 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "../assets/color";
 .course-nav{
   width: 100%;
-  background: #ffffff;
+  background: $white-color;
   .title{
     padding: 1rem;
-    color: #999999;
+    color: $vice-color;
   }
   .course-list{
     display: flex;
@@ -52,7 +53,7 @@
         margin: 0 auto;
         i{
           font-size: 2rem;
-          color: #ffffff;
+          color: $white-color;
           line-height: 3rem;
         }
       }
@@ -61,7 +62,7 @@
         margin-top: 5px;
         font-size: 1.2rem;
         width: 100%;
-        color: #666666;
+        color: $main-color;
       }
     }
 

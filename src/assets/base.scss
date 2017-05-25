@@ -1,9 +1,16 @@
 @import './font';
 /* variable start*/
+$black-color:#000000;
 $base-color:#333333;
-$border-color:#e5e5e5;
+$main-color:#666666;
 $vice-color:#999999;
+$border-color:#e5e5e5;
+$white-color:#ffffff;
+$tip-color:#0088af;
 $red-color:#ec1500;
+$back-color:#f5f5f5;
+$btn-yellow:#ffa020;
+$active-color:#ff2d52;
 /* variable end */
 html{
   font-size: 62.5%;
@@ -11,7 +18,7 @@ html{
 body{
   font-size: 1.4rem;
   color: $base-color;
-  background: #f5f5f5;
+  background: $white-color;
 }
 
 /*reset style start*/
@@ -46,7 +53,7 @@ em,i{
 .checkbox{
 .icon{
   font-size: 2rem;
-  color: #ec1500;
+  color: $red-color;
 }
   input[type='checkbox'],input[type='radio']{
     display: none;
@@ -64,8 +71,6 @@ em,i{
   overflow: hidden;
 }
 /*mixin end*/
-
-
 /* 注册和登录 */
 .login,.login .mask{
   width: 100%;
@@ -80,7 +85,7 @@ em,i{
   .mask {
     background: rgba(0, 0, 0, 0.6);
     h2 {
-      color: #ffffff;
+      color: $white-color;
       font-size: 2.4rem;
       text-align: center;
       font-weight: 400;
@@ -108,7 +113,7 @@ em,i{
         outline: none;
         border: none;
         text-indent: 2rem;
-        color: #ffffff;
+        color: $white-color;
         &::-webkit-input-placeholder {
           text-indent: 2rem;
           color: $font-color;
@@ -120,7 +125,7 @@ em,i{
         background: rgba(40, 93, 124, 0.6);
         width: 70%;
         margin: 2rem auto;
-        color: #ffffff;
+        color: $white-color;
         padding: 1rem;
         line-height: 2rem;
       }
@@ -130,7 +135,7 @@ em,i{
       right: 2rem;
       top: 5px;
       padding: 1rem;
-      color: #0088af;
+      color: $tip-color;
     }
     .handle-tip{
       text-align: center;
@@ -206,7 +211,7 @@ em,i{
   text-align: center;
   font-size: 1.2rem;
   line-height: 2;
-  color: #999999;
+  color: $vice-color;
 }
 
 

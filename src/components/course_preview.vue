@@ -23,8 +23,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "../assets/color";
 .course-preview{
-  background: #ffffff;
+  background: $white-color;
   display: flex;
   .preview-left{
     flex:1;
@@ -48,7 +49,7 @@
     }
     .price{
       width: 100%;
-      color: #ec1500;
+      color: $red-color;
       display: flex;
       align-items: flex-end;
     }

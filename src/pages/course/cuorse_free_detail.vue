@@ -113,6 +113,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import "../../assets/color";
   .course-detail {
     padding-bottom: 4.5rem;
   }
@@ -123,7 +124,7 @@
     background-size: 100%;
     position: relative;
     .title {
-      color: #fff;
+      color: $white-color;
       font-size: 1.8rem;
       position: absolute;
       bottom: 2rem;
@@ -139,14 +140,14 @@
         border-radius: 50%;
         line-height: 5rem;
         text-align: center;
-        background: #ffffff;
+        background: $white-color;
         float: left;
         margin-right: 1rem;
         box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
         i {
           font-size: 2.8rem;
           vertical-align: middle;
-          color: #666;
+          color: $main-color;
         }
       }
     }
@@ -155,18 +156,18 @@
   .detail-desc {
     padding: 1rem;
     background: #fff;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid $border-color;
     .level {
       display: inline-block;
       background: #ffa019;
-      color: #ffffff;
+      color: $white-color;
       padding: 2px 4px;
       margin-bottom: 1rem;
       border-radius: 2px;
       font-size: 1.2rem;
     }
     p {
-      color: #999999;
+      color: $vice-color;
       line-height: 1.5;
     }
   }
@@ -176,9 +177,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #fff;
+    background: $white-color;
     padding: 1rem;
-    border: 1px solid #e5e5e5;
+    border: 1px solid $border-color;
     .author {
       display: flex;
       align-items: center;
@@ -200,13 +201,13 @@
     .icon-wrapper {
       i {
         font-size: 2.4rem;
-        color: #999999;
+        color: $vice-color;
       }
     }
   }
 
   .detail-comment {
-    background: #ffffff;
+    background: $white-color;
     .comment-intro {
       padding: 1rem;
       display: flex;
@@ -227,15 +228,15 @@
   }
 
   .detail-note {
-    border-top: 1px solid #e5e5e5;
-    background: #ffffff;
+    border-top: 1px solid $border-color;
+    background: $white-color;
     padding: 1rem;
     .note-block {
       .note-title {
         padding-bottom: 1rem;
       }
       .note-content {
-        color: #999999;
+        color: $vice-color;
         padding-left: 2.4rem;
         line-height: 2;
         margin-bottom: 1rem;
@@ -247,7 +248,7 @@
       }
     }
       .course-chapter{
-        border-left: 1px solid #e5e5e5;
+        border-left: 1px solid $border-color;
         padding-left: 2rem;
         position: relative;
         &:before{
@@ -257,7 +258,7 @@
           width: 1rem;
           height: 1rem;
           border-radius: 50%;
-          background: #e5e5e5;
+          background: $border-color;
           left: -0.5rem;
         }
         &:last-child{
@@ -267,7 +268,7 @@
         }
         .chapter-item{
           line-height: 2.5;
-          color: #666666;
+          color: $main-color;
         }
       }
   }
@@ -275,7 +276,7 @@
   #learnBtn {
     border: none;
     background: #fe2e50;
-    color: #ffffff;
+    color: $white-color;
     font-size: 1.8rem;
     line-height: 4rem;
     text-align: center;

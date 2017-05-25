@@ -38,10 +38,11 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   @import "../assets/base";
+  @import "../assets/color";
   .course-box {
     width: 14rem;
     height: 14rem;
-    background: #ffffff;
+    background: $white-color;
     overflow: hidden;
     border-radius: 5px;
     box-sizing: border-box;
@@ -55,7 +56,7 @@
       line-height: 3em;
       padding: 0 1rem;
       font-size: 1.3em;
-      color: #ffffff;
+      color: $white-color;
       background: rgba(87,152,208,1);
       @include word-overflow(1);
       span{
@@ -84,7 +85,7 @@
       display: flex;
       justify-content: space-between;
       .price{
-        color: #ec1500;
+        color: $red-color;
       }
     }
   }

@@ -31,20 +31,21 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+  @import "../assets/color";
   .sort-nav{
     position: relative;
     padding: 1rem 0;
     h4{
       text-align: center;
       font-size: 1.6rem;
-      color: #666666;
+      color: $main-color;
       i{
         font-size: 1.8rem;
         color: #1db1f7
       }
     }
     .sort-link{
-      color: #999999;
+      color: $vice-color;
       font-size: 1.2rem;
       position: absolute;
       right: 2rem;

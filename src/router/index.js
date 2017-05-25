@@ -15,6 +15,7 @@ import course from '../pages/course/course.vue' // 课程导航
 import courseList from '../pages/course/course_list.vue'  // 课程介绍
 import freeDetail from '../pages/course/cuorse_free_detail.vue'  // 免费课程细节
 import chargeDetail from '../pages/course/course_charge_detail.vue'  // 付费课程细节
+import search from '../pages/course/search.vue' // 搜索课程
 
 // 下载相关
 import download from '../pages/download/download.vue'
@@ -36,6 +37,9 @@ import payment from '../pages/payment/payment.vue'
 
 // 实战相关
 import practice from '../pages/practice/practice.vue'
+
+// 手记相关
+import mark from '../pages/mark/mark.vue'
 
 Vue.use(Router)
 
@@ -116,6 +120,16 @@ export default new Router({
       path: '/practice',
       name: 'practice',
       component: practice
+    },
+    {
+      path: '/mark',
+      name: 'mark',
+      component: mark
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: search
     }
   ]
 })
