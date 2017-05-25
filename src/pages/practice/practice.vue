@@ -10,21 +10,25 @@
       </mt-swipe>
     </div>
     <div class="classify">
-      <div class="item active">全部</div>
-      <div class="item">前端开发</div>
-      <div class="item">后端开发</div>
-      <div class="item">移动开发</div>
-      <div class="item">数据库</div>
-      <div class="item">运维&测试</div>
+      <div class="item" :class="{active:type==='all'}" @click="getPracticeList('all', 1)">全部</div>
+      <div class="item" :class="{active:type==='front'}" @click="getPracticeList('front', 1)">前端开发</div>
+      <div class="item" :class="{active:type==='back'}" @click="getPracticeList('back', 1)">后端开发</div>
+      <div class="item" :class="{active:type==='mobile'}" @click="getPracticeList('mobile', 1)">移动开发</div>
+      <div class="item" :class="{active:type==='database'}" @click="getPracticeList('database', 1)">数据库</div>
+      <div class="item" :class="{active:type==='test'}" @click="getPracticeList('test', 1)">运维&测试</div>
     </div>
-    <div class="list">
+    <div class="list" ref="listWrapper" v-infinite-scroll="getPracticeList"
+         infinite-scroll-disabled="loading"
+         infinite-scroll-distance="10">
       <course-preview v-for="info in list" :previewInfo="info" :key="info.id"></course-preview>
+      <p class="achieve-bottom" ref="achieveBottom"></p>
     </div>
   </div>
 </template>
 
 <script>
   import coursePreview from '../../components/course_preview.vue'
+  import {practice} from '../../api/index'
   export default {
     name: 'practice',
     components: {
@@ -32,28 +36,40 @@
     },
     data () {
       return {
-        list: [{
-          id: 'ec4d5s5v',
-          title: 'ES6零基础教学 解析彩票项目，带你装逼带你飞',
-          price: '188.00',
-          imgUrl: '/static/images/es6.jpg'
-        }, {
-          id: 'ec4d5s5v',
-          title: 'ES6零基础教学 解析彩票项目，带你装逼带你飞',
-          price: '188.00',
-          imgUrl: '/static/images/es6.jpg'
-        }, {
-          id: 'ec4d5s5v',
-          title: 'ES6零基础教学 解析彩票项目，带你装逼带你飞',
-          price: '188.00',
-          imgUrl: '/static/images/es6.jpg'
-        }, {
-          id: 'ec4d5s5v',
-          title: 'ES6零基础教学 解析彩票项目，带你装逼带你飞',
-          price: '188.00',
-          imgUrl: '/static/images/es6.jpg'
-        }]
+        type: 'all',
+        list: [],
+        loading: false,
+        page: 1
       }
+    },
+    methods: {
+      getPracticeList (type, page) {
+        this.loading = true
+        if (page === 1) {
+          this.type = type
+          this.page = 1
+          this.list = []
+          this.$refs.achieveBottom.innerHTML = ''
+          practice.getPracticeList(type, page).then(res => {
+            this.list = JSON.parse(res)
+            this.loading = false
+          })
+        } else {
+          this.page++
+          practice.getPracticeList(this.type, this.page).then(res => {
+            if (JSON.parse(res).length === 0) {
+              this.$refs.achieveBottom.innerHTML = '我是有底线的~~~'
+              return
+            } else {
+              this.list = this.list.concat(JSON.parse(res))
+            }
+            this.loading = false
+          })
+        }
+      }
+    },
+    mounted () {
+      this.getPracticeList('all', 1)
     }
   }
 </script>
@@ -90,11 +106,12 @@
       }
     }
   }
-  .list{
-    .course-preview{
+
+  .list {
+    .course-preview {
       border-bottom: 1px solid #e5e5e5;
       padding: 1rem;
-      &:last-child{
+      &:last-child {
         border-bottom: 0;
       }
     }

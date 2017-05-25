@@ -27,7 +27,7 @@
   background: #ffffff;
   display: flex;
   .preview-left{
-    flex:1 0 9rem;
+    flex:1;
     img{
       width: 9rem;
       height: 6rem;

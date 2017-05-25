@@ -48,7 +48,7 @@
 </template>
 
 <script>
-  import {MessageBox} from 'mint-ui'
+  import { Toast } from 'mint-ui'
   import {mapActions} from 'vuex'
   export default {
     name: 'login',
@@ -69,13 +69,13 @@
             if (res.data && res.status === 200) {
               this.$router.push({path: 'home'})
             } else {
-              MessageBox('提示', '用户名或密码错误')
+              Toast({message: '用户名或密码错误', iconClass: 'icon icon-cross'})
             }
           }).catch((e) => {
-            MessageBox('提示', '连接错误')
+            Toast({message: '连接错误', iconClass: 'icon icon-cross'})
           })
         } else {
-          MessageBox('提示', '请完善表单内容')
+          Toast({message: '请完善表单'})
         }
       },
       passwordDisplay: function () {
