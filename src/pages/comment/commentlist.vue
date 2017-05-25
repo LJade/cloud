@@ -21,7 +21,6 @@
     },
     mounted () {
       comments.getCommentList().then(res => {
-        console.log(res)
         this.comments = res
       })
     }

@@ -59,7 +59,7 @@
 <script>
   import comment from '../../components/comment.vue'
   import chapterList from '../../components/chapter_list.vue'
-  import {MessageBox} from 'mint-ui'
+  import {Toast} from 'mint-ui'
   import {mapActions} from 'vuex'
   export default {
     name: 'course_charge',
@@ -119,17 +119,11 @@
       ...mapActions(['addToCart']),
       addToShopCart (id) {
         this.addToCart(id).then(res => {
-          console.log(0, res)
-          if (res.status === 200) {
-            MessageBox('提示', '添加成功，快去购物车查看吧！')
-          } else if (res.status === 301) {
-            MessageBox('提示', '您已经添加过了哦，不能重复添加')
-          } else if (res.status === 304) {
-            MessageBox('提示', '啊哦，添加失败了')
-          }
+          if (res.status === 200) Toast({message: '添加成功，快去购物车查看吧！', iconClass: 'icon icon-checkmark'})
+          else if (res.status === 301) Toast({message: '您已经添加过了哦，不能重复添加'})
+          else if (res.status === 304) Toast({message: '啊哦，添加失败了', iconClass: 'icon icon-cross'})
         }).catch((e) => {
-          console.log(e)
-          MessageBox('提示', '连接错误')
+          Toast({message: '服务器连接错误'})
         })
       },
       tab (type) {

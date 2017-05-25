@@ -16,7 +16,7 @@
 <script>
   import CartProduct from './cart-product'
   import {mapGetters, mapActions} from 'vuex'
-  import { MessageBox } from 'mint-ui'
+  import {Toast} from 'mint-ui'
   export default {
     components: {CartProduct},
     name: 'cart',
@@ -39,9 +39,9 @@
       ...mapActions(['getAllProducts', 'modifyChecked', 'modifyAll']),
       goPay () {
         if (this.selectedPro.length > 0) {
-          MessageBox('提示', '购买页面还没做好...')
+          this.$router.push('/payment')
         } else {
-          MessageBox('提示', '亲，先选择要购买的商品哦')
+          Toast({message: '亲，先选择要购买的商品哦'})
         }
       },
       selectAllPros () {

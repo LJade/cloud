@@ -32,7 +32,7 @@
 </template>
 
 <script>
-  import {MessageBox} from 'mint-ui'
+  import {Toast} from 'mint-ui'
   export default {
     name: 'register',
     data () {
@@ -49,9 +49,8 @@
       registerSubmit () {
         const {username, password} = this
         if (username && password) {
-
         } else {
-          MessageBox('提示', '请完善表单内容')
+          Toast({message: '请完善表单'})
         }
       },
       passwordDisplay: function () {
@@ -64,7 +63,7 @@
       },
       getVerification () {
         if (!this.username) {
-          MessageBox('提示', '请填写手机号')
+          Toast({message: '请填写手机号'})
         } else {
           let time = 45
           let clock = setInterval(() => {
