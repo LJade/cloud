@@ -3,7 +3,7 @@
     <div class="preview-left"><img :src="previewInfo.imgUrl" alt=""></div>
     <div class="preview-right">
       <div class="title">{{previewInfo.title}}</div>
-      <div class="price">{{previewInfo.price}}</div>
+      <div class="price">￥{{previewInfo.price}}</div>
     </div>
   </router-link>
 </template>

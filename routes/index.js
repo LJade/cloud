@@ -18,4 +18,6 @@ module.exports = function (app) {
   app.get('/api/addcart',Cart.addToCart)
   // 切换不同分类
   app.get('/api/practiceList',Course.getPracticeList)
+  // 搜索
+  app.get('/api/search',Course.search)
 };
