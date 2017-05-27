@@ -3,13 +3,10 @@ import {Toast} from 'mint-ui'
 export function search (keyword) {
   return Ax.get('/api/search?keyword=' + keyword).then(res => {
     if (res && res.data.status === 200) {
-      console.log(res)
       this.searchList = res.data.data
       // 历史记录
       let temp = JSON.parse(localStorage.getItem('imooc_search')) ? JSON.parse(localStorage.getItem('imooc_search')) : []
-      let index = temp.findIndex(function (ele) {
-        return ele === keyword
-      })
+      let index = temp.findIndex(function (ele) { return ele === keyword })
       if (index !== -1) temp.splice(index, 1)
       this.historyList = temp.push(keyword)
       localStorage.setItem('imooc_search', JSON.stringify(temp.reverse()))

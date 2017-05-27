@@ -1,32 +1,27 @@
 <template>
   <div class="search">
     <div class="search-group">
-      <input type="text" v-model="keyword" placeholder="请输入搜索内容">
+      <input type="text" v-model="keyword" placeholder="请输入搜索内容" @keyup.enter="search(keyword)">
       <div class="icon-close" @click="closeSearchList"><i class="icon-cross"></i></div>
-      <button type="button" @click="search(keyword)" @keyup.enter="search(keyword)"><i class="icon icon-search"></i>
+      <button type="button" @click="search(keyword)"><i class="icon icon-search"></i>
       </button>
     </div>
-    <div class="search-block" v-if="searchList.length===0">
+    <div class="search-block" v-show="searchList.length===0">
       <div class="block-header">搜索历史
         <div class="clear-history" @click="clearHistory">清除</div>
       </div>
       <div class="block-body">
-        <div class="search-item" v-if="historyList.length>0" v-for="item in historyList">{{item}}</div>
-        <div class="search-item" v-else>暂无搜索历史</div>
+        <div class="search-item" v-show="historyList.length>0" v-for="item in historyList" @click="search(item)">{{item}}</div>
+        <div class="search-item" v-show="historyList.length===0" style="font-size:1.2rem">暂无搜索历史</div>
       </div>
     </div>
-    <div class="search-block" v-if="searchList.length===0">
+    <div class="search-block" v-show="searchList.length===0">
       <div class="block-header">热门搜索</div>
       <div class="block-body">
-        <div class="search-item">AngularJS</div>
-        <div class="search-item">Vue</div>
-        <div class="search-item">Java</div>
-        <div class="search-item">Android</div>
-        <div class="search-item">C</div>
-        <div class="search-item">C++</div>
+        <div class="search-item" v-for="item in hotSearch" @click="search(item)">{{item}}</div>
       </div>
     </div>
-    <div class="search-block" v-if="searchList.length>0">
+    <div class="search-block" v-show="searchList.length>0">
       <course-preview v-for="item in searchList" :key="item.id" :previewInfo="item"></course-preview>
     </div>
   </div>
@@ -45,16 +40,15 @@
       return {
         keyword: '',
         historyList: [],
-        searchList: []
+        searchList: [],
+        hotSearch: ['Vue', 'Java', 'C++', 'Android', 'Yii']
       }
     },
     methods: {
-      reset () {
-        this.historyList = JSON.parse(localStorage.getItem('imooc_search')) ? JSON.parse(localStorage.getItem('imooc_search')) : []
-        this.searchList = []
-      },
       closeSearchList () {
+        this.keyword = ''
         this.searchList = []
+        this.historyList = JSON.parse(localStorage.getItem('imooc_search')) ? JSON.parse(localStorage.getItem('imooc_search')) : []
       },
       clearHistory () {
         this.historyList = []
@@ -66,7 +60,7 @@
       }
     },
     mounted () {
-      this.reset()
+      this.closeSearchList()
     }
   }
 </script>
@@ -115,7 +109,6 @@
         position: absolute;
         right: 10rem;
         text-align: center;
-        border: 1px solid red;
         i {
           color: $white-color;
           font-size: 1rem;
