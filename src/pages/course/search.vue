@@ -12,7 +12,7 @@
       </div>
       <div class="block-body">
         <div class="search-item" v-if="historyList.length>0" v-for="item in historyList">{{item}}</div>
-        <div class="search-item" v-else="historyList.length===0">暂无搜索历史</div>
+        <div class="search-item" v-else>暂无搜索历史</div>
       </div>
     </div>
     <div class="search-block" v-if="searchList.length===0">
@@ -45,13 +45,12 @@
       return {
         keyword: '',
         historyList: [],
-        searchList: [],
-        msg: 'Welcome to Your Vue.js App'
+        searchList: []
       }
     },
     methods: {
       reset () {
-        this.historyList = JSON.parse(localStorage.getItem('imooc_search')).reverse()
+        this.historyList = JSON.parse(localStorage.getItem('imooc_search')) ? JSON.parse(localStorage.getItem('imooc_search')) : []
         this.searchList = []
       },
       closeSearchList () {
@@ -114,7 +113,7 @@
         width: 2rem;
         height: 2rem;
         position: absolute;
-        right: 8rem;
+        right: 10rem;
         text-align: center;
         border: 1px solid red;
         i {

@@ -90,6 +90,10 @@ exports.search = function (req, res, next) {
     res.json({status:200,message:'搜索成功',data:[{id:'2544',title:'angular打造一体化系统',price:100,imgUrl:'/static/images/angular.jpg'},
       {id:'6587',title:'angular 6到飞起',price:234,imgUrl:'/static/images/react.jpg'}]})
   }
+  else if(keyword === 'react'){
+    res.json({status:200,message:'搜索成功',data:[{id:'2544',title:'ReactBoom风暴来袭',price:300,imgUrl:'/static/images/es6.jpg'},
+      {id:'6587',title:'ReactBoom风暴来袭',price:234,imgUrl:'/static/images/es6.jpg'}]})
+  }
   else{
     res.json({status:304,message:'没有查询到结果'})
   }
