@@ -11,7 +11,7 @@
         </div>
         <div class="form-group">
           <!--<input type="text" v-model="form.password" placeholder="密码" v-if="isSeen">-->
-          <input type="password" v-model="password" placeholder="密码" ref="psd">
+          <input type="password" v-model="password" placeholder="密码" ref="psd" @keyup.enter="loginSubmit">
           <div class="icon-wrapper">
             <i class="icon icon-eye-close" :class="[isSeen ? 'icon-eye' : 'icon-eye-close']"
                @click="passwordDisplay"></i>

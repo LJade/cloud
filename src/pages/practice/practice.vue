@@ -100,6 +100,7 @@
       text-align: center;
       border: 1px solid #f2f2f2;
       border-radius: 20px;
+      margin: 0 1rem;
       &.active {
         background: #fd2d4f;
         border: 1px solid #fd2d4f;

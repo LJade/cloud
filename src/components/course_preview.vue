@@ -35,6 +35,7 @@
     }
   }
   .preview-right{
+    width: 65%;
     padding-left: 1rem;
     overflow: hidden;
     display: flex;

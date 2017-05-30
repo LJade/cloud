@@ -54,7 +54,7 @@
         </course-info>
       </div>
       <course-sort :sortInfo="sortInfoPra"></course-sort>
-      <div class="course-list clear-fix">
+      <div class="course-list">
         <courseInfo
           v-for="course in courseInfoPra"
           :courseInfo="course"
@@ -187,11 +187,18 @@
       }
     }
   }
-
   .course-list{
     padding: 1rem;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-between;
+
+    .course-box{
+      &:last-child{
+        align-self: flex-start;
+        justify-self:start;
+      }
+    }
   }
 </style>
