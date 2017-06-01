@@ -5,9 +5,9 @@
     <div class="content">
       <div class="user-header">
         <div class="user-intro">
-          <div class="avatar-wrapper">
+          <router-link class="avatar-wrapper" to="/avatar">
             <img src="../../assets/images/avatar.png" alt="">
-          </div>
+          </router-link>
           <div class="user-desc">
             <h3>灵公子</h3>
             <p><span>学习时长<em>345小时</em></span><span>经验<em>14761</em></span></p>

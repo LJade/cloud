@@ -41,6 +41,9 @@ import practice from '../pages/practice/practice.vue'
 // 手记相关
 import mark from '../pages/mark/mark.vue'
 
+// 图片上传
+import avatar from '../pages/user/avatar.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -130,6 +133,11 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: search
+    },
+    {
+      path: '/avatar',
+      name: 'avatar',
+      component: avatar
     }
   ]
 })
