@@ -17,14 +17,17 @@
       上传图片
       <input type='file' @change="fileChange" accept="image/jpeg,image/jpg,image/png">
     </label>
-    <div class="crop" id="crop">
+    <div class="crop" id="crop" v-show="!hasCropped">
       <div class="mask"></div>
       <div class="crop-size" ref="cropSize">
       </div>
       <div id="drag" ref="drag" v-drag>
-        <canvas id="canvas" width="0" height="0" ref="canvas"></canvas>
+        <canvas id="canvas" width="100%" height="auto" ref="canvas"></canvas>
       </div>
       <button type="button" @click='cropImg'>裁剪</button>
+    </div>
+    <div class="crop-result" v-show="hasCropped">
+      <canvas id="cropResult"></canvas>
     </div>
   </div>
 </template>
@@ -34,7 +37,8 @@
     name: 'avatar',
     data () {
       return {
-        images: []
+        images: [],
+        hasCropped: false
       }
     },
     directives: {
@@ -71,13 +75,20 @@
     },
     methods: {
       cropImg () {
-        let left = this.$refs.cropSize.offsetLeft
-        let top = this.$refs.cropSize.offsetTop
-        let width = this.$refs.cropSize.clientWidth
-        let height = this.$refs.cropSize.clientHeight
-        let canvas = document.getElementById('canvas')
+        let canvas = document.getElementById('cropResult')
         let ctx = canvas.getContext('2d')
         let img = document.getElementById('tempImg')
+        console.log(img.style.width)
+        console.log(img.offsetWidth, img.offsetHeight)
+        console.log(this.$refs.cropSize.offsetWidth, this.$refs.cropSize.offsetHeight)
+        let left = img.offsetWidth - this.$refs.cropSize.offsetLeft
+        let top = img.offsetHeight - this.$refs.cropSize.offsetTop
+        let width = this.$refs.cropSize.clientWidth
+        let height = this.$refs.cropSize.clientHeight
+        console.log(left, top)
+        console.log(width, height)
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        this.hasCropped = true
         ctx.drawImage(img, left, top, width, height, 0, 0, width, height)
       },
       fileChange (e) {
@@ -88,14 +99,15 @@
         let fr = new FileReader()
         fr.onload = function (e) {
           image.src = e.target.result
+          console.log(image.naturalWidth, image.naturalHeight)
         }
         image.onload = function () {
-          canvas.width = 200
-          canvas.height = 200
+          canvas.width = image.naturalWidth
+          canvas.height = image.naturalHeight
           image.id = 'tempImg'
           image.style.display = 'none'
           document.body.appendChild(image)
-          ctx.drawImage(image, 0, 0, 200, 200)
+          ctx.drawImage(image, 0, 0, canvas.width, canvas.height)
         }
         fr.readAsDataURL(file)
       },
@@ -139,6 +151,7 @@
     width: 30rem;
     border: 1px solid red;
     position: relative;
+    overflow: auto;
     .mask {
       position: absolute;
       width: 100%;
@@ -173,6 +186,8 @@
   #drag {
     position: absolute;
     z-index: 20;
+    width: 100%;
+    height: auto;
     min-width: 5rem;
     min-height: 5rem;
     top: 0;
