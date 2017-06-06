@@ -19,7 +19,7 @@
           </div>
           <span class="menu-tag">实战</span>
         </router-link>
-        <router-link to="">
+        <router-link to="/career">
           <div class="icon-wrapper">
             <i class="icon icon-route"></i>
           </div>

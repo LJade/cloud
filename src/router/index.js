@@ -16,6 +16,7 @@ import courseList from '../pages/course/course_list.vue'  // 课程介绍
 import freeDetail from '../pages/course/cuorse_free_detail.vue'  // 免费课程细节
 import chargeDetail from '../pages/course/course_charge_detail.vue'  // 付费课程细节
 import search from '../pages/course/search.vue' // 搜索课程
+import career from '../pages/course/course_career.vue' // 职业路径
 
 // 下载相关
 import download from '../pages/download/download.vue'
@@ -138,6 +139,11 @@ export default new Router({
       path: '/avatar',
       name: 'avatar',
       component: avatar
+    },
+    {
+      path: '/career',
+      name: 'career',
+      component: career
     }
   ]
 })
