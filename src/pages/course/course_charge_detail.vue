@@ -13,40 +13,48 @@
       </div>
     </div>
     <div class="charge-body">
-      <div class="tab-body" v-show="tabName==='intro'">
-        <div class="intro">
-          <p>{{course.intro}}</p>
-          <div><span>难度:{{course.level}}</span>
-            <span>时长:{{course.time}}</span>
-            <span>学习人数:{{course.num}}人</span></div>
-        </div>
-        <div class="comment-pre">
+      <transition name="fade">
+        <div class="tab-body" v-show="tabName==='intro'">
+          <div class="intro">
+            <p>{{course.intro}}</p>
+            <div><span>难度:{{course.level}}</span>
+              <span>时长:{{course.time}}</span>
+              <span>学习人数:{{course.num}}人</span></div>
+          </div>
+          <div class="comment-pre">
 
-          <div class="inner-pre">
-            <div class="title"><h4>综合评价  <em>{{course.avgScore}}</em></h4>
-              <div class="comment-tag">
-                <span v-for="tag in course.tag">{{tag.tag}}<i>{{tag.score}}</i></span>
+            <div class="inner-pre">
+              <div class="title"><h4>综合评价  <em>{{course.avgScore}}</em></h4>
+                <div class="comment-tag">
+                  <span v-for="tag in course.tag">{{tag.tag}}<i>{{tag.score}}</i></span>
+                </div>
               </div>
+              <comment :comment="course.comment"></comment>
+              <router-link to="/comment" class="go-comments">
+                查看全部评价({{course.commentNum}})
+              </router-link>
             </div>
-            <comment :comment="course.comment"></comment>
-            <router-link to="/comment" class="go-comments">
-              查看全部评价({{course.commentNum}})
-            </router-link>
+            <div class="inner-pre">
+              <div class="title"><h4>实战咨询</h4></div>
+              <router-link to="" class="go-consult">{{course.consult}}</router-link>
+            </div>
           </div>
-          <div class="inner-pre">
-            <div class="title"><h4>实战咨询</h4></div>
-            <router-link to="" class="go-consult">{{course.consult}}</router-link>
+          <div class="img-detail" v-for="img in course.detailImgUrl">
+            <img :src="img" alt="">
           </div>
         </div>
-        <div class="img-detail" v-for="img in course.detailImgUrl">
-          <img :src="img" alt="">
+      </transition>
+      <transition name="fade">
+        <div class="tab-body" v-show="tabName==='chapter'">
+          <chapter-list :chapters="course.chapters"></chapter-list>
         </div>
-      </div>
-      <div class="tab-body" v-show="tabName==='chapter'">
-        <chapter-list :chapters="course.chapters"></chapter-list>
-      </div>
-      <div class="tab-body" v-show="tabName==='comment'">55555</div>
-      <div class="tab-body" v-show="tabName==='consult'">66666</div>
+      </transition>
+      <transition name="fade">
+        <div class="tab-body" v-show="tabName==='comment'">55555</div>
+      </transition>
+      <transition name="fade">
+        <div class="tab-body" v-show="tabName==='consult'">66666</div>
+      </transition>
     </div>
     <div class="bottom-fixed">
       <div class="price">￥{{course.price}}</div>
@@ -149,6 +157,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   @import "../../assets/color";
+
   .course-charge {
     padding-bottom: 4rem;
   }
@@ -317,5 +326,11 @@
     .go-buy {
       background: #ff2d52;
     }
+  }
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0
   }
 </style>
