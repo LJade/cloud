@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+// demo测试
+import hello from '../components/Hello.vue'
+
 // 注册相关
 import register from '../pages/register/register.vue'
 
@@ -59,6 +62,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login
+    },
+    {
+      path: '/hello',
+      name: 'hello',
+      component: hello
     },
     {
       path: '/register',
